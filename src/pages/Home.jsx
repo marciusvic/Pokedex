@@ -6,6 +6,7 @@ import { Grid } from "@mui/material"
 import axios from 'axios'
 import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react'
+import Footer from '../components/Footer/index.jsx'
 
 export const Home = ()=>{
     const [pokemons, setPokemons] = useState([]);
@@ -38,7 +39,7 @@ export const Home = ()=>{
     return(
         <Box sx = {{backgroundColor:"#000000"}}>
             <Navbar pokemonFilter = {pokemonFilter}/>
-            <Container maxWidth = "false" className = "home-container">
+            <Container maxWidth = "false" className = "home-container" sx={{width: "100%", height: "100%", backgroundColor:"#000000"}}>
                 <Grid container spacing={3} sx = {{ display: "flex", justifyContent: "center", alignItems: "center", alignContent:"center"}}>
                     {pokemons.map((pokemon, key) =>(
                         <Grid item xs = {12} sm = {6} md = {4} lg = {4} xl = {3} key = {key} sx = {{ display: "flex", justifyContent: "center", alignItems: "center", alignContent:"center"}} className = "home-div-grid">
@@ -47,6 +48,7 @@ export const Home = ()=>{
                     ))}
                 </Grid>
             </Container>
+            <Footer />
         </Box>
     )
 }

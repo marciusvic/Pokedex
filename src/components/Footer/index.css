@@ -1,0 +1,9 @@
+.a-footer{
+    text-decoration: none;
+    font-size: 29px;
+    transition: 250ms;
+}
+.a-footer:hover{
+    font-size: 37px;
+    transition: 150ms;
+}
