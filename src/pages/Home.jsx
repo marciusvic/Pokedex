@@ -4,8 +4,8 @@ import PokemonCard from '../components/PokemonCard/index'
 import { Container } from "@mui/system"
 import { Grid } from "@mui/material"
 import axios from 'axios'
+import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react'
-import './Home.css'
 
 export const Home = ()=>{
     const [pokemons, setPokemons] = useState([]);
@@ -36,7 +36,7 @@ export const Home = ()=>{
       };
     
     return(
-        <div className="home">
+        <Box sx = {{backgroundColor:"#000000"}}>
             <Navbar pokemonFilter = {pokemonFilter}/>
             <Container maxWidth = "false" className = "home-container">
                 <Grid container spacing={3} sx = {{ display: "flex", justifyContent: "center", alignItems: "center", alignContent:"center"}}>
@@ -47,6 +47,6 @@ export const Home = ()=>{
                     ))}
                 </Grid>
             </Container>
-        </div>
+        </Box>
     )
 }
